@@ -1,0 +1,122 @@
+Author = "Code34";
+onLoadName = "HARDCORE Insurgency";
+loadScreen = "famas.jpg";
+OnLoadMission = "HARDCORE INSURGENCY by Code34";
+Respawn = "INSTANT";
+RespawnDelay = 5;
+DisabledAI = true;
+joinUnassigned = false; // auto assign
+
+class Header
+{
+	gameType=CTI;
+	minPlayers=1;
+	maxPlayers=36;
+};
+
+//// Respawn Script - Start ////
+#include "INS_revive\description.hpp"
+//// Respawn Script - End   ////
+
+
+class Params
+{
+	// Example Parameter
+	class EmtpyLine0 {
+		title = ":: Hardcore insurgency";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;
+	};
+
+	class PARAM_Redlevel
+	{
+		title = "    Opposition force (number of enemies - heavy cpu charge)";
+		values[] = {1,2,3};
+		texts[] = {"LOW", "NORMAL", "HEAVY"};
+		default = 1;
+	};
+
+	class PARAM_Redlevelzonesize
+	{
+		title = "    Enemy can go out of red zone (change clearing zone condition)";
+		values[] = {50,150,300};
+		texts[] = {"No", "150 meter", "300 meter"};
+		default = 150;
+	};
+
+
+	class PARAM_Redzone
+	{
+		title = "    % of Urban Redzone";
+		values[] = {30, 50, 70, 100};
+		texts[] = {"30%", "50%", "70%", "100%"};
+		default = 30;
+	};
+
+	class PARAM_TimeOfDay
+	{
+		title = "    Time of Day";
+		values[] = {1,2,3,4};
+		texts[] = {"04:00", "12:00", "17:00", "22:00"};
+		default = 2;
+	};
+
+	class PARAM_fastime
+	{
+		title = "    Fast time";
+		values[] = {1,2};
+		texts[] = {"Yes", "No"};
+		default = 1;
+	};
+
+	class PARAM_dynamicweather
+	{
+		title = "    Dynamic Weather";
+		values[] = {1,2};
+		texts[] = {"Yes", "No"};
+		default = 1;
+	};
+
+	class PARAM_headlessclient
+	{
+		title = "    Headlessclient is avalaible";
+		values[] = {0,1};
+		texts[] = {"No", "Yes"};
+		default = 0;
+	};
+
+	class PARAM_deleteinidb
+	{
+		title = "    Purge inidb database";
+		values[] = {0,1};
+		texts[] = {"No", "Yes"};
+		default = 0;
+	};
+	
+	//// Respawn Script - Start ////
+	#include "INS_revive\params.hpp"
+	//// Respawn Script - End   ////
+};
+
+
+class RscTitles
+{
+	//// Respawn Script - Start ////
+	#include "INS_revive\rsctitles.hpp"
+	//// Respawn Script - End   ////
+};
+
+class cfgFunctions {
+	//// Respawn Script - Start ////
+	#include "INS_revive\cfgfunctions.hpp"
+	//// Respawn Script - End   ////
+};
+
+class Extended_PreInit_EventHandlers {
+	// Replace mission_name with name of your mission
+	class mission_name { 
+		// If has ace mode, enable ace wound system
+		serverInit = "ace_sys_wounds_enabled = true; publicVariable 'ace_sys_wounds_enabled';";
+	};
+};
