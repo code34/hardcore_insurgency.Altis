@@ -1,6 +1,6 @@
 	// -----------------------------------------------
 	// Author: team  code34 nicolas_boiteux@yahoo.fr
-	// Dynamic zone for EOS
+	// Dynamic zone
 	// -----------------------------------------------
 	//if (!isServer) exitWith{};
 

@@ -1,5 +1,4 @@
 ﻿	// init warcontext function
-	WC_fnc_weather 		= compile preprocessFile "warcontext\wc_weather\WC_fnc_weather.sqf";
 	WC_fnc_skill	 	= compile preprocessFile "warcontext\wc_skill\WC_fnc_setskill.sqf";
 	WC_fnc_computezone	= compile preprocessFile "EOS\eos_computezone.sqf";
 
@@ -26,6 +25,10 @@
 	
 	// Wait for INS_revive initialized
 	waitUntil {!isNil "INS_REV_FNCT_init_completed"};
+
+	if(PARAM_dynamicweather == 1) then {		
+		[] execVM "real_weather\real_weather.sqf";
+	};
 	
 	if (isServer) then {
 		switch(PARAM_TimeOfDay) do {
@@ -49,23 +52,11 @@
 		if(PARAM_headlessclient == 0) then {
 			wcamountofredzones = 1 - (PARAM_Redzone/100);
 			[] execVM "EOS\init.sqf";
-		};
-		if(PARAM_dynamicweather == 1) then {		
-			wcgarbage = [] spawn WC_fnc_weather;
+			[] execVM "DCL\init.sqf";
 		};
 	};
 
 	if (local player) then {	
-		// set meteo
-		"wcweather" addPublicVariableEventHandler {
-			wcweather = _this select 1;
-			60 setRain (wcweather select 0);
-			60 setfog (wcweather select 1);
-			60 setOvercast (wcweather select 2);
-			setwind (wcweather select 3);
-			setdate (wcweather select 4);
-		};
-
 		// synch server & client
 		"wcheadlessclientid" addPublicVariableEventHandler {
 			wcheadlessclientid = (_this select 1);
@@ -78,6 +69,7 @@
 		if((PARAM_headlessclient == 1) and (name player == "HC")) then {
 			wcamountofredzones = 1 - (PARAM_Redzone/100);
 			[] execVM "EOS\init.sqf";
+			[] execVM "DCL\init.sqf";
 
 			[] spawn {
 				while {true} do {
