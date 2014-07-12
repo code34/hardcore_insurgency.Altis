@@ -56,12 +56,13 @@ class Mission
 		"A3_Characters_F_OPFOR",
 		"A3_Air_F_Gamma_UAV_01",
 		"A3_Air_F_Beta_Heli_Attack_02",
-		"A3_Modules_F_Supports"
+		"A3_Modules_F_Supports",
+		"a3_characters_f"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
-		"a3_characters_f_beta",
+		"a3_characters_f",
 		"A3_Characters_F_Gamma",
 		"a3_uav_f_characters_f_gamma",
 		"A3_Modules_F_Multiplayer",
@@ -73,7 +74,6 @@ class Mission
 		"A3_Modules_F_Supports",
 		"A3_Characters_F_INDEP",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"A3_Misc_F_Helpers",
 		"A3_Structures_F_System",
 		"A3_Air_F_Heli_Light_01",
@@ -86,6 +86,7 @@ class Mission
 		"A3_Soft_F_MRAP_03",
 		"A3_Boat_F_Beta_Boat_Armed_01",
 		"A3_Boat_F_Civilian_Boat",
+		"A3_Weapons_F_Beta_Ammoboxes",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Armor_F_AMV",
 		"A3_Armor_F_Panther",
@@ -110,7 +111,7 @@ class Mission
 	randomSeed=7374927;
 	class Intel
 	{
-		briefingName="HARDCORE INSURGENCY 1.36";
+		briefingName="HARDCORE INSURGENCY 1.38";
 		resistanceWest=0;
 		resistanceEast=1;
 		startWeather=0;
@@ -417,7 +418,7 @@ class Mission
 						{
 							value="600";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -496,7 +497,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -575,7 +576,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -654,7 +655,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -733,7 +734,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -812,7 +813,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -891,7 +892,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -1077,7 +1078,7 @@ class Mission
 						{
 							value="120";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -1436,7 +1437,7 @@ class Mission
 						{
 							value="120";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -1535,7 +1536,7 @@ class Mission
 						{
 							value="600";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -1614,7 +1615,7 @@ class Mission
 						{
 							value="120";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{
@@ -1692,7 +1693,7 @@ class Mission
 						{
 							value="240";
 							parentCls="ModuleRespawnVehicle_F";
-							typeName="DesertedDelay";
+							typeName="";
 						};
 						class Item2
 						{

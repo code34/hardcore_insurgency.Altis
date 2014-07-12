@@ -52,7 +52,6 @@
 		if(PARAM_headlessclient == 0) then {
 			wcamountofredzones = 1 - (PARAM_Redzone/100);
 			[] execVM "EOS\init.sqf";
-			[] execVM "DCL\init.sqf";
 		};
 	};
 
@@ -69,7 +68,6 @@
 		if((PARAM_headlessclient == 1) and (name player == "HC")) then {
 			wcamountofredzones = 1 - (PARAM_Redzone/100);
 			[] execVM "EOS\init.sqf";
-			[] execVM "DCL\init.sqf";
 
 			[] spawn {
 				while {true} do {

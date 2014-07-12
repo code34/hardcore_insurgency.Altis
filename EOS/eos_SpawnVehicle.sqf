@@ -5,6 +5,7 @@
 	//if (!isServer) exitwith {};
 
 	private [
+			"_array",
 			"_currentEOSVeh",
 			"_armorPool",
 			"_motorPool",
@@ -73,15 +74,16 @@
 		};
 	};
 
-	_sideEOSVeh = [_spwnposNew, random 359, _currentEOSVeh,_enemyFactionVehicle] call bis_fnc_spawnvehicle;
-	_vehicle = _sideEOSVeh select 0;
-	_group = _sideEOSVeh select 2;
+	_array = [_spwnposNew, random 359, _currentEOSVeh,_enemyFactionVehicle] call bis_fnc_spawnvehicle;
+	_vehicle = _array select 0;
+	_group = _array select 2;
 
-	_handle = [(leader _group),_marker,"showmarker"] execVM "scripts\ups.sqf";
+	_handle = [_group, position (leader _group), 400] execVM "scripts\WC_fnc_patrol.sqf";	
 	_vehicle setVehicleLock "LOCKED";
 
 	{
 		wcgarbage = [_x, ""] spawn WC_fnc_skill;
+		sleep 0.5;
 	}foreach (units _group);
 
 	_loop=true;
@@ -103,13 +105,6 @@
 			_loop=false;
 			terminate _handle;
 		};
-		//_markersize = (getMarkerSize _marker) select 1;
-		//if((leader _group) distance _markerpos > (_markersize/2)) then {
-		//	if((((leader _group) distance _markerpos) * 2) < 1000) then {
-		//		_markersize = (((leader _group) distance _markerpos) * 2);
-		//		_marker setmarkersize [_markersize, _markersize];
-		//	};
-		//};
 	};
 
 	_marker setmarkersize [50,50];

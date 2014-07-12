@@ -82,7 +82,7 @@
 		wcgarbage = [_x, _currentEOStype] spawn WC_fnc_skill;
 	}foreach (units _group);
 
-	_handle = [(leader _group),_marker,"showmarker"] execVM "scripts\ups.sqf";
+	_handle = [_group, position (leader _group), 400] execVM "scripts\WC_fnc_patrol.sqf";
 				
 	_loop=true;
 	while {_loop} do {
