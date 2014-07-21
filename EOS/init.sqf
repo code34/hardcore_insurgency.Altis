@@ -107,7 +107,8 @@
 
 		_array = [_infhouse, _inf, _lightveh, _heavveh, _static, _air];
 
-		[[format ["%1",_marker]],_array,[0,800,0],true] execVM "eos\eos_GearBox.sqf";
+		[[format ["%1",_marker]],_array,[0,800,0],true] execVM "eos\eos_Init.sqf";
+
 		sleep 0.001;
 	}foreach _zonetocreate;
 
