@@ -78,7 +78,7 @@
 	_vehicle = _array select 0;
 	_group = _array select 2;
 
-	_handle = [_group, position (leader _group), 400] execVM "scripts\WC_fnc_patrol.sqf";	
+	_handle = [_group, position (leader _group), 400] execVM "warcontext\WC_fnc_patrol.sqf";	
 	_vehicle setVehicleLock "LOCKED";
 
 	{
