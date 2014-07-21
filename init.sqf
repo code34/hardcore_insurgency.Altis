@@ -1,5 +1,5 @@
 ﻿	// init warcontext function
-	WC_fnc_skill	 	= compile preprocessFile "warcontext\wc_skill\WC_fnc_setskill.sqf";
+	WC_fnc_skill	 	= compile preprocessFile "warcontext\WC_fnc_setskill.sqf";
 	WC_fnc_computezone	= compile preprocessFile "EOS\eos_computezone.sqf";
 
 	if (isClass(configFile >> "cfgPatches" >> "inidbi")) then {
